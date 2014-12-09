@@ -1,0 +1,22 @@
+---
+driver:
+  name: vagrant
+  network:
+  - ["private_network", {ip: "172.16.0.12"}]
+
+driver_config:
+  require_chef_omnibus: 11.12.2
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: centos-6.5
+    driver:
+      box: node1
+
+suites:
+  - name: default
+    run_list:
+      - recipe[role-mongodb-configserver::default]
+    attributes:

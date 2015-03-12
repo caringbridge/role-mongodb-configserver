@@ -4,7 +4,7 @@ maintainer_email 'YOUR_EMAIL'
 license          'All rights reserved'
 description      'Installs/Configures role-mongodb-configserver'
 long_description 'Installs/Configures role-mongodb-configserver'
-version          '0.1.0'
+version          '0.1.1'
 
 depends 'mongodb', '0.16.1'
 depends 'yum'

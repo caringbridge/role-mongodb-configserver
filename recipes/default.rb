@@ -8,6 +8,7 @@
 #
 include_recipe 'yum'
 include_recipe 'mongodb::mongodb_org_repo'
+include_recipe 'mongodb::configserver'
 
 node.override['mongodb']['package_name'] = 'mongo-10gen-server'
 ['mongo-10gen', 'mongo-10gen-server'].each do |rpm|
@@ -16,4 +17,9 @@ node.override['mongodb']['package_name'] = 'mongo-10gen-server'
   end
 end
 
-include_recipe 'mongodb::configserver'
+directory "/var/run/mongodb" do
+  owner 'mongod'
+  group 'mongod'
+  mode '0755'
+  action :create
+end

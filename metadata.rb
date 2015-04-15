@@ -6,5 +6,5 @@ description      'Installs/Configures role-mongodb-configserver'
 long_description 'Installs/Configures role-mongodb-configserver'
 version          '0.1.3'
 
-depends 'mongodb', '0.16.2'
+depends 'mongodb', '0.16.1'
 depends 'yum'
